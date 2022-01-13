@@ -9,7 +9,13 @@ run()->
     output_record(DrGiggles),
     output_record(DukeNuke),
 
-    update_record(DrGiggles, 5, ["New", "New 2"]).
+    NewGiggles = update_record(DrGiggles, 10, ["Joined Game"]),
+    NewDuke = update_record(DukeNuke, 10, ["Joined Game"]),
+
+    io:fwrite("Updated the records, new records:\n"),
+
+    output_record(NewGiggles),
+    output_record(NewDuke).
 
 create_record(GamerTag, Points, Achievements)->
     #gamer{ gamer_tag = GamerTag, points = Points, achievements = Achievements }.
